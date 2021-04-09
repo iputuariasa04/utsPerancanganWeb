@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator Saya</title>
+</head>
+<style>
+    .box{
+        margin: 40px auto;
+        border: 2px solid #000;
+        width: 320px;
+        height: 200px;
+    }
+    h2{
+        text-align: center;
+        margin-bottom: -10px;
+    }
+    .center{
+        text-align: center;
+    }
+    table{
+        margin: 25px auto;
+    }
+    table tr td{
+        padding: 3px;
+    }
+    #kirim{
+        margin-top: 15px;
+    }
+</style>
+<body>
+    <form name="form1" action="#" class="box">
+        <h2>Kalkulator Saya</h2>
+        <table>
+            <tr>
+                <td><label for="">Nilai 1 :</label></td>
+                <td><input type="text" name="n1"></td>
+            </tr>
+            <tr>
+                <td><label for="">Nilai 2 :</label></td>
+                <td><input type="text" name="n2"></td>
+            </tr>
+            <tr>
+                <td><label for="">Pilih Operator :</label></td>
+                <td><select name="opt">
+                    <option value="tambah">Penjumlahan</option>
+                    <option value="kurang">Pengurangan</option>
+                    <option value="kali">Perkalian</option>
+                    <option value="bagi">Pembagian</option>
+                </select></td>
+            </tr>
+            <tr class="center">
+                <td colspan="2"><button type="submit" onclick="hitung()" id="kirim">Kirim</button></td>
+            </tr>
+        </table>
+    </form>
+    <script language="JavaScript" type="text/javascript">
+        function hitung(){
+            var kotakform = document.form1;
+            var nilai1 = eval(kotakform.n1.value);
+            var nilai2 = eval(kotakform.n2.value);
+            var operator = kotakform.opt.value;
+            if (operator == "tambah") {
+                var z = nilai1 + nilai2;
+            }
+            else if (operator == "kurang") {
+                var z = nilai1 - nilai2;
+            } 
+            else if (operator == "kali") {
+                var z = nilai1 * nilai2;
+            } 
+            else if (operator == "bagi") {
+                var z = nilai1 / nilai2;
+            }
+            alert("Hasil dari " + nilai1 + " " + operator + " " + nilai2 + " adalah " + z);
+        }
+    </script>
+</body>
+</html>
